@@ -1,0 +1,7 @@
+describe TriangleClassifier do
+  let(:classifier) { TriangleClassifier.new }
+  
+  it "is equalateral when all sides are the same length" do
+    classifier.classify(3,3,3).should == :equalateral
+  end
+end

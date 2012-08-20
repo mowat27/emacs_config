@@ -1,0 +1,7 @@
+{:user {:plugins [[lein-noir "1.2.1"]
+                  [lein-ring "0.5.2"]
+                  [lein-midje "2.0.0-SNAPSHOT"]
+                  [lein-pprint "1.1.1"]
+                  [lein-light "0.0.4"]
+                  ]}}
+

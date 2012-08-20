@@ -1,0 +1,10 @@
+cd ..
+ls
+cd ..
+ls
+cd helpers
+ls
+gs
+source ~/.profile
+. ~/.profile
+exit

@@ -1,0 +1,79 @@
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
+fi
+
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+function tree {
+  if [[ -z "$1" ]]
+  then
+    LOC='.'
+   else
+    LOC=$1
+  fi
+  find $LOC -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+}
+
+alias poly="source $HOME/.poly/polygot.bash"
+poly load java ruby rails mysql emacs
+
+alias ll='ls -ltr | tail'
+alias l='ls -1tr | tail'
+alias fndr='open /System/Library/CoreServices/Finder.app "$PWD"'
+alias gc='git commit -m'
+alias ga='git add'
+alias gs='git status'
+alias glo='git log --oneline'
+alias gl="git log --graph --pretty=\"format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset\""
+alias be="bundle exec"
+alias ec='cd ~/edgecase; pwd'
+alias sub='sublime'
+
+
+PS1='\[\033[0;33m\]$(rvm current)\[\033[0m\]:$(basename $PWD) \[\033[0m\]$ '
+CLICOLOR=1; export CLICOLOR
+LSCOLORS=GxFxCxDxBxegedabagaced; export LSCOLORS
+
+
+set -o vi
+
+##
+# Your previous /Users/adrian/.profile file was backed up as /Users/adrian/.profile.macports-saved_2009-09-16_at_20:00:13
+##
+
+# MacPorts Installer addition on 2009-09-16_at_20:00:13: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+# MacPorts Installer addition on 2009-09-16_at_20:00:13: adding an appropriate MANPATH variable for use with MacPorts.
+export MANPATH=/opt/local/share/man:$MANPATH
+# Finished adapting your MANPATH environment variable for use with MacPorts.
+
+##
+# Your previous /Users/adrian/.profile file was backed up as /Users/adrian/.profile.macports-saved_2010-11-30_at_16:16:02
+##
+
+# MacPorts Installer addition on 2010-11-30_at_16:16:02: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+export PATH="/Users/adrian/Library/Application Support/GoodSync":$PATH

@@ -1,0 +1,36 @@
+
+;; ----- smex-history -----
+(
+ query-replace-regexp
+ revert-buffer
+ load-theme
+ eval-buffer
+ eval-expression
+ package-initialize
+ package-install
+)
+
+;; ----- smex-data -----
+(
+ (package-refresh-contents . 3)
+ (eval-buffer . 19)
+ (shell . 5)
+ (package-initialize . 5)
+ (run-lisp . 2)
+ (package-install . 22)
+ (clojure-jack-in . 4)
+ (package-list-packages . 2)
+ (load-file . 1)
+ (color-theme-ld-dark . 1)
+ (color-theme-taming-mr-arneson . 2)
+ (color-theme-twilight . 1)
+ (line-number-mode . 1)
+ (linum-mode . 3)
+ (tabbar-mode . 1)
+ (load-library . 1)
+ (color-theme-select . 2)
+ (eval-expression . 4)
+ (load-theme . 6)
+ (query-replace-regexp . 5)
+ (revert-buffer . 1)
+)

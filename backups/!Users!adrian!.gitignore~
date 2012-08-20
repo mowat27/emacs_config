@@ -1,0 +1,6 @@
+nbproject
+*.db
+pkg
+
+#emacs
+*#*
