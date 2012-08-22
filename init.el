@@ -1,8 +1,16 @@
 ;; Allow hash to be entered  
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
+(global-set-key (kbd "S-C-<left>")  'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>")  'shrink-window)
+(global-set-key (kbd "S-C-<up>")    'enlarge-window)
+
 (autoload 'linum-mode "linum" "toggle line numbers on/off" t) 
 (global-set-key (kbd "C-<f5>") 'linum-mode)
+
+; Windows and buffers
+(add-to-list 'same-window-buffer-names "*Buffer List*")
 
 ;; Setup packages
 (require 'package)
@@ -18,12 +26,29 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; el-get
+(defconst el-get-user-package-directory "~/.emacs.d/el-get-init-files") 
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil t)
+  (url-retrieve
+   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+   (lambda (s)
+     (goto-char (point-max))
+     (eval-print-last-sexp))))
+
+(el-get 'sync)
+
 ; Setup colors
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'twilight t)
 
-
-; Setup autocomplete for slime
+; Modes
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+(add-to-list 'auto-mode-alist '("\\.html.*" . auto-complete-mode))
+                                   
+; autocomplete for slime
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (ac-config-default)
@@ -33,7 +58,6 @@
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
