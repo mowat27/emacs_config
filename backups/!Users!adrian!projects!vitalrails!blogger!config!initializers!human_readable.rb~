@@ -1,5 +1,0 @@
-class ActiveRecord::Base
-  def human_readable_name
-    model.class.name.underscore.humanize
-  end
-end

@@ -1,5 +1,0 @@
-<h1>Please Login</h1>
-
-<%= form_tag do %>
- <p></p>
-<% end %>
