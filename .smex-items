@@ -1,23 +1,23 @@
 
 ;; ----- smex-history -----
 (
- load-theme
- clojure-jack-in
- clojure-mode
- shell
- rename-buffer
- auto-complete
- html-mode
+ eval-buffer
+ apropos-variable
+ package-install
+ revert-buffer
+ haml-mode
+ rename-file
+ query-replace-regexp
 )
 
 ;; ----- smex-data -----
 (
  (package-refresh-contents . 3)
- (eval-buffer . 19)
+ (eval-buffer . 23)
  (shell . 7)
  (package-initialize . 5)
  (run-lisp . 2)
- (package-install . 23)
+ (package-install . 24)
  (clojure-jack-in . 7)
  (package-list-packages . 2)
  (load-file . 1)
@@ -31,11 +31,18 @@
  (color-theme-select . 2)
  (eval-expression . 4)
  (load-theme . 10)
- (query-replace-regexp . 5)
- (revert-buffer . 1)
+ (query-replace-regexp . 7)
+ (revert-buffer . 10)
  (html-mode . 4)
  (ruby-mode . 1)
- (auto-complete . 1)
+ (auto-complete . 2)
  (rename-buffer . 1)
  (clojure-mode . 1)
+ (auto-complete-mode . 1)
+ (coffee-mode . 1)
+ (balance-windows . 1)
+ (replace-regexp . 4)
+ (rename-file . 1)
+ (haml-mode . 1)
+ (apropos-variable . 1)
 )
